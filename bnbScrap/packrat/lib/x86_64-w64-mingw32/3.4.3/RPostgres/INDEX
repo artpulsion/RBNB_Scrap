@@ -1,0 +1,11 @@
+Postgres                Postgres driver
+RPostgres-package       RPostgres: 'Rcpp' Interface to 'PostgreSQL'
+dbDisconnect,PqConnection-method
+                        Connect to a PostgreSQL database.
+postgres-query          Execute a SQL statement on a database
+                        connection
+postgres-tables         Convenience functions for reading/writing DBMS
+                        tables
+postgres-transactions   Transaction management.
+postgresHasDefault      Check if default database is available.
+quote                   Quote postgres strings and identifiers.

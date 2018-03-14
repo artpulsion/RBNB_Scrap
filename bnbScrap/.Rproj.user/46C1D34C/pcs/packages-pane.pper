@@ -1,0 +1,7 @@
+{
+    "installOptions" : {
+        "installDependencies" : true,
+        "installFromRepository" : true,
+        "libraryPath" : "C:/Users/sofianembarki/Desktop/bnbScrap/packrat/lib/x86_64-w64-mingw32/3.4.3"
+    }
+}

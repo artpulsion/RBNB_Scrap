@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1520963588474.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "983334374",
+    "id" : "40275887",
+    "lastKnownWriteTime" : 1520974502,
+    "last_content_update" : 1520974502701,
+    "path" : "C:/Users/sofianembarki/Desktop/bnbProject/bnbScrap/R/getInfosCity.R",
+    "project_path" : "R/getInfosCity.R",
+    "properties" : {
+        "cursorPosition" : "98,0",
+        "scrollLine" : "14"
+    },
+    "relative_order" : 1,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

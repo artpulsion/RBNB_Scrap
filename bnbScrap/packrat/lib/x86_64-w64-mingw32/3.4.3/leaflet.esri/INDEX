@@ -1,0 +1,22 @@
+addEsriBasemapLayer     Adds a ArcGIS Basemap layer
+addEsriDependency       Adds esri-leaflet dependency to the leaflet
+                        widget
+addEsriDynamicMapLayer
+                        Render and visualize Map Services from ArcGIS
+                        Online and ArcGIS Server.
+addEsriFeatureLayer     Adds an ArcGIS Feature Layer.
+addEsriHeatmapFeatureLayer
+                        Add Esri Heatmap Feature Layer.
+addEsriImageMapLayer    Render and visualize Image Services from ArcGIS
+                        Online and ArcGIS Server.
+addEsriTiledMapLayer    Access tiles from ArcGIS Online and ArcGIS
+                        Server to visualize and identify features.
+dynamicMapLayerOptions
+                        Options for dynamic map layer.
+esriBasemapLabels       Esri basemap labels.
+esriBasemapLayers       Esri Basemap Layers.
+featureLayerOptions     Options for featureLayers.
+imageMapLayerOptions    Options for image map layer.
+leaflet.esri            leaflet.esri: 'ESRI' bindings for the 'leaflet'
+                        Package.
+tiledMapLayerOptions    Options for TiledMapLayer.

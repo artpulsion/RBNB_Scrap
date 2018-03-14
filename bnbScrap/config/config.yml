@@ -1,0 +1,7 @@
+db:
+  host : 'localhost'
+  dbname : 'bnbscrap'
+  user : 'postgres'
+  port : 5432
+  password : 'QS*bnbscrap'
+

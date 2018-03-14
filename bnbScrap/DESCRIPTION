@@ -1,0 +1,46 @@
+Package: bnbScrap
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1
+Date: 2015-05-06
+Author: Your name goes here
+Description: More about what it does (maybe more than one line)
+License: What license is it under?
+LazyData: TRUE
+Imports:
+  tidyverse,
+  broom,
+  pwr,
+  purrr,
+  plotly,
+  dygraphs,
+  leaflet,
+  leaflet.extras,
+  leaflet.esri,
+  DBI,
+  RPostgres,
+  magrittr,
+  lubridate,
+  yaml,
+  devtools,
+  rvest, 
+  stringr
+Depends:
+  R (>= 3.4.2),
+  tidyverse,
+  broom,
+  pwr,
+  purrr,
+  plotly,
+  dygraphs,
+  leaflet,
+  leaflet.extras,
+  leaflet.esri,
+  DBI,
+  RPostgres,
+  magrittr,
+  lubridate,
+  yaml,
+  devtools,
+  rvest, 
+  stringr
