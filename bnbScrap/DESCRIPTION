@@ -24,7 +24,10 @@ Imports:
   yaml,
   devtools,
   rvest, 
-  stringr
+  stringr,
+  googleway,
+  httr,
+  readxl
 Depends:
   R (>= 3.4.2),
   tidyverse,
@@ -43,4 +46,7 @@ Depends:
   yaml,
   devtools,
   rvest, 
-  stringr
+  stringr,
+  googleway,
+  httr,
+  readxl
