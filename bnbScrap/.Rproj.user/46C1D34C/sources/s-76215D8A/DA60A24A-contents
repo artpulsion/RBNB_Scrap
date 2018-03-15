@@ -1,0 +1,57 @@
+
+
+
+####
+#
+# This function permit us to know which cities around the worl we scrap
+#
+####
+
+
+whichCities <- function(list.cities) {
+
+
+  if ( missing(list.cities) ) {
+
+
+    # Select all the cities as requested in the call
+    cities <- bnbScrap:::sqlSendQuery('select * from city')
+
+    # Plot all the cities on a world map
+    leaflet(data = cities) %>% addTiles() %>%
+    addMarkers( ~lng, ~lat, popup = ~as.character(name), label = ~as.character(name) )
+
+  }
+
+
+  else if (length(list.cities) == 1) {
+
+    # Construct the query
+    query <- sprintf("select * from city where name = '%s'", list.cities)
+
+    # Get the announced city
+    tmp.city <- bnbScrap:::sqlSendQuery(query)
+
+    # Localise them
+    leaflet(data = tmp.city) %>% addTiles() %>%
+    addMarkers( ~lng, ~lat, popup = ~as.character(name), label = ~as.character(name) )
+
+
+  }
+
+  else if (length(list.cities) > 1) {
+
+    list.cities <- paste0("'", list.cities, "'") %>% paste(., collapse = ", ")
+
+    # Construct the query
+    query <- sprintf("select * from city where name IN (%s)", list.cities)
+
+    # Get the announced city
+    tmp.cities <- bnbScrap:::sqlSendQuery(query)
+
+    # Localise them
+    leaflet(data = tmp.cities) %>% addTiles() %>%
+    addMarkers( ~lng, ~lat, popup = ~as.character(name), label = ~as.character(name) )
+  }
+
+}

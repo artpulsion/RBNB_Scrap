@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521143165781.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F7C488A5",
+    "lastKnownWriteTime" : 1521148792,
+    "last_content_update" : 1521148974930,
+    "path" : "C:/Users/sofianembarki/Desktop/bnbProject/bnbScrap/R/getUsers.R",
+    "project_path" : "R/getUsers.R",
+    "properties" : {
+        "cursorPosition" : "12,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : true,
+    "source_window" : "",
+    "type" : "r_source"
+}

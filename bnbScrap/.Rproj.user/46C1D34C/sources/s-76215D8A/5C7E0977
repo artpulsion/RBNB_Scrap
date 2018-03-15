@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521145162608.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5C7E0977",
+    "lastKnownWriteTime" : 19140500286668907,
+    "last_content_update" : 1521145162608,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "27C5553F",
+        "caption" : "houses.city",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=houses.city&cache_key=27C5553F",
+        "displayedObservations" : 288,
+        "environment" : "",
+        "object" : "houses.city",
+        "preview" : 0,
+        "totalObservations" : 288,
+        "variables" : 3
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

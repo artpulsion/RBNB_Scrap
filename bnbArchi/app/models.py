@@ -12,8 +12,8 @@ class User(db.Model):
 
 class City(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    gp_id = db.Column(db.String(64), index=True)
-    name = db.Column(db.String(120), index=True)
+    gp_id = db.Column(db.String(64), index=True, unique=True)
+    name = db.Column(db.String(120), index=True, unique=True)
     lng = db.Column(db.Float)
     lat = db.Column(db.Float)
 

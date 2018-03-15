@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521143135627.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "27CB1481",
+    "lastKnownWriteTime" : 1521143414,
+    "last_content_update" : 1521143414672,
+    "path" : "C:/Users/sofianembarki/Desktop/bnbProject/bnbScrap/R/getHousesCity.R",
+    "project_path" : "R/getHousesCity.R",
+    "properties" : {
+        "cursorPosition" : "124,4",
+        "scrollLine" : "95"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

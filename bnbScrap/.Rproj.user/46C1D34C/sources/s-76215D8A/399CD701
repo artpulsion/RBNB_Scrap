@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521147558279.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "399CD701",
+    "lastKnownWriteTime" : 2334386829831463272,
+    "last_content_update" : 1521147558279,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7F634FFA",
+        "caption" : "flat_porto",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=flat_porto&cache_key=7F634FFA",
+        "displayedObservations" : 288,
+        "environment" : "",
+        "object" : "flat_porto",
+        "preview" : 0,
+        "totalObservations" : 288,
+        "variables" : 3
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
