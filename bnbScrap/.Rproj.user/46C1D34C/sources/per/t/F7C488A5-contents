@@ -6,16 +6,14 @@ getUser <- function(houses.city) {
   # structure for all users
   all.users.flats.ids <- c()
 
-  # get the ids of the current houses
-  ids.flat <- houses.city %>% pull(bnb_flat_id)
-  ids.flat <- as.numeric(as.character(ids.flat))
+  # convert factor as integer
+  houses.city %<>% mutate( bnb_flat_id = as.integer(as.character(bnb_flat_id)) )
 
+  # get the index of the iteration
+  index <- 0
 
-  index = 0
-  
-  
   # for each houses find the owner
-  for (id in ids.flat) {
+  for (id in houses.city$bnb_flat_id) {
 
     # create the base url
     url.user <- sprintf("https://www.airbnb.pt/rooms/%d", id)
@@ -25,6 +23,7 @@ getUser <- function(houses.city) {
 
     # get the all users present on the page
     user.class <- "._110nrr2"
+    user.class <- "._ni9axhe"
     page <- webpage.url %>% html_nodes(user.class) %>% html_attr("href")
 
 
@@ -42,7 +41,6 @@ getUser <- function(houses.city) {
 
     # fetch the user and his flat
     user.flat.id <- c(user.id, id)
-    cat( user.flat.id)
     cat('\n')
     cat(url.user)
     cat('\n')
@@ -50,7 +48,7 @@ getUser <- function(houses.city) {
 
     # Information about the avancement
     index = index + 1
-    cat( sprintf( 'Users: %d/%d \n', index, length(ids.flat)) )
+    cat( sprintf( 'Users: %d/%d \n', index, length(houses.city$bnb_flat_id)) )
 
     # bind the each user . flat at each iteration in order to construct a base
     all.users.flats.ids <- rbind(all.users.flats.ids, user.flat.id)
@@ -62,5 +60,9 @@ getUser <- function(houses.city) {
   # rename the dataframe with the appropriate colnames which match with our api
   colnames(all.users.flats.ids) = c('bnb_user_id', 'bnb_flat_id')
 
-  return(all.users.flats.ids)
+  # get only the houses associated with a user
+  walley <- inner_join(houses.city, all.users.flats.ids, by='bnb_flat_id')
+
+  # return the joined dataframe
+  return(walley)
 }

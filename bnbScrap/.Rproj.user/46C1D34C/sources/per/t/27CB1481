@@ -5,7 +5,7 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2040843866",
     "id" : "27CB1481",
     "lastKnownWriteTime" : 1521143414,
     "last_content_update" : 1521143414672,
@@ -13,7 +13,7 @@
     "project_path" : "R/getHousesCity.R",
     "properties" : {
         "cursorPosition" : "124,4",
-        "scrollLine" : "95"
+        "scrollLine" : "89"
     },
     "relative_order" : 5,
     "source_on_save" : false,
