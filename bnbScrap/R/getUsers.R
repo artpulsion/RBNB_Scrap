@@ -15,34 +15,49 @@ getUser <- function(houses.city) {
   # for each houses find the owner
   for (id in houses.city$bnb_flat_id) {
 
-    # create the base url
-    url.user <- sprintf("https://www.airbnb.pt/rooms/%d", id)
+    # acces to the house with his with his id
+    url.flat <- sprintf("https://www.airbnb.pt/rooms/%d", id)
 
     # load the webpage
-    webpage.url <- read_html(url.user)
+    webpage.url <- read_html(url.flat)
 
-    # get the all users present on the page
-    user.class <- "._110nrr2"
-    user.class <- "._ni9axhe"
-    page <- webpage.url %>% html_nodes(user.class) %>% html_attr("href")
+    # get the potential user in the current page
+    class.potential.users <- "._2930ex"
+    page.potential.users <- webpage.url %>% html_nodes(class.potential.users)
+
+    # get the ids of the potential users of the current houses
+    all.pot.users.ids <- c()
+    for (node in page.potential.users) {
+
+      pot.users.ids <- node %>% as.character %>%
+        str_match_all("[0-9]+") %>% unlist %>% as.numeric
+
+      all.pot.users.ids <- c(all.pot.users.ids, pot.users.ids)
+    }
 
 
-    # Why we will take the most frequent pattern of 'users/show/****' because
-    # I didn't find a technic to get with good assurance the id of the host
-    # based on the class. Thus, to target him in the chaos I decide to take the most
-    # common string based on the pattern below and assume take this string is the host
-    # because in generale the host is highly present in his page.
+    all.pot.users.ids <- all.pot.users.ids[!all.pot.users.ids < 10000]
+    all.pot.users.ids <- table(all.pot.users.ids) %>% names(.) %<>% as.numeric
 
-    # user id in string format : get the most frequent user
-    user.id <- sort(table(page), decreasing=TRUE) %>% names(.) %>% first()
 
-    # get the integer part of the string and convert it as numeric
-    user.id %<>% str_match_all("[0-9]+") %>% unlist %>% as.numeric
+    # get the users ids and filter to find the good
+    user.class_.user <- "._110nrr2"
+    page <- webpage.url %>% html_nodes(user.class_.user) %>% html_attr('href')
+
+
+    user.id <-
+      sort(table(page), decreasing=TRUE) %>% names(.) %>%
+      str_match_all("[0-9]+") %>% unlist() %>% as.numeric
+
+
+    # get the user id from the current flat
+    user.id <- all.pot.users.ids[all.pot.users.ids %in% user.id]
+
 
     # fetch the user and his flat
     user.flat.id <- c(user.id, id)
     cat('\n')
-    cat(url.user)
+    cat(url.flat)
     cat('\n')
 
 
@@ -62,6 +77,7 @@ getUser <- function(houses.city) {
 
   # get only the houses associated with a user
   walley <- inner_join(houses.city, all.users.flats.ids, by='bnb_flat_id')
+  walley <- walley %>% group_by(bnb_user_id) %>% ddply(.variables = c('bnb_flat_id'), head, 1)
 
   # return the joined dataframe
   return(walley)

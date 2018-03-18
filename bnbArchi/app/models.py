@@ -1,5 +1,10 @@
 from app import db
 
+
+####################
+### USER
+####################
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     bnb_user_id = db.Column(db.Integer, index=True, unique=True)
@@ -9,6 +14,10 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User id {}, Bnb user id {}, Name {}>'.format(self.id, self.bnb_user_id, self.name)    
+
+####################
+### CITY
+####################
 
 class City(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,7 +31,9 @@ class City(db.Model):
     def __repr__(self):
         return '<City id {}, Google place id {}, Name {}, Latitutde {}, Longitude {}>'.format(self.id, self.gp_id, self.name, self.lat, self.lng)    
 
-
+####################
+### FLAT
+####################
 
 class Flat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -39,6 +50,9 @@ class Flat(db.Model):
     def __repr__(self):
         return '<Flat id {}, City id {}, User id {}, Bnb Flat id {}, Name {}, User id {}, City id {}>'.format(self.id, self. city_id, self.user_id, self.bnb_flat_id, self.name)    
 
+####################
+### CALENDAR
+####################
 
 class Calendar(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -55,3 +69,10 @@ class Calendar(db.Model):
 
 
 
+class User_agent(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(1000), index=True, unique=True)
+
+    def __repr__(self):
+        return 'Name {}'.format(self.name)
